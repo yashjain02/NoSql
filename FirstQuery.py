@@ -4,7 +4,7 @@ def print_hi(name):
          print(f'Hi, {name}')
 def connectdb(wordGiven):
     client = pymongo.MongoClient(
-        "mongodb+srv://yash_kumar:yashjain@cluster0.oaexh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+        "mongodb+srv://yash_kumar:<password>@cluster0.oaexh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     db = client.test
     col = db['countries']
     cursor=col.find({'name': {'$regex': wordGiven,'$options':'i'}},{'name':1, '_id':0})
