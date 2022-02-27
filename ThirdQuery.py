@@ -1,3 +1,4 @@
+#send the first four countries in continents by alphabetical order
 import pymongo as pymongo
 def connectdb():
     client = pymongo.MongoClient(

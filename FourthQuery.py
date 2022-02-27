@@ -1,12 +1,15 @@
-#To add population feid in all the collections, data id generated randomly
+#Add the new attribute population in countries, population data is taken from wikipedia and its approximate
 import pymongo as pymongo
 def connectdb():
     client = pymongo.MongoClient(
         "mongodb+srv://yash_kumar:yashjain@cluster0.oaexh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     db = client.test
     col = db['countries']
-    cursor=col.find({},{'_id':0, 'name':1, 'population':1}).sort('population')
-    for i in cursor:
-        print(i)
+    col.updateMany({}, {'$set': {"population": 'null'}})
+    col.update_one({'name':'USA'},{'$set':{'population': 332915073}})
+    col.update_one({'name': 'Greece'}, {'$set': {'population': 10720000}})
+    col.update_one({'name': 'germany'}, {'$set': {'population': 832400000}})
+    col.update_one({'name': 'South africa'}, {'$set': {'population': 593100000}})
+    col.update_one({'name': 'India'}, {'$set': {'population': 14000000000}})
 if __name__ == '__main__':
     connectdb()

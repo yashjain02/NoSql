@@ -1,3 +1,4 @@
+# Get the list of continents with number of countries in them
 import pymongo as pymongo
 def connectdb():
     client = pymongo.MongoClient(
