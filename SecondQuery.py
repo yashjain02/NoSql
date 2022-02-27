@@ -6,7 +6,7 @@ def connectdb():
     db = client.test
     col = db['continents']
     cursor=col.aggregate([{'$project': {'name': 1,'_id':0, 'numberOfCountries': { '$size': '$countries' }}}])
-    for CountryName in cursor:
-        print(CountryName)
+    for ContinentName in cursor:
+        print(ContinentName)
 if __name__ == '__main__':
     connectdb()
