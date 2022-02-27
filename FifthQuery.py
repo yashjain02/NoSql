@@ -1,4 +1,4 @@
-#Get all teh countries order by number of people, first less populated and last highly populated, I have removed my password for security purpose
+#Get all the countries order by number of people, first less populated and last highly populated, I have removed my password for security purpose
 import pymongo as pymongo
 def connectdb():
     client = pymongo.MongoClient(
@@ -6,7 +6,7 @@ def connectdb():
     db = client.test
     col = db['countries']
     cursor=col.find({},{'_id':0, 'name':1, 'population':1}).sort('population')
-    for i in cursor:
-        print(i)
+    for countryName in cursor:
+        print(countryName)
 if __name__ == '__main__':
     connectdb()
