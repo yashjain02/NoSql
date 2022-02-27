@@ -2,7 +2,7 @@
 import pymongo as pymongo
 def connectdb():
     client = pymongo.MongoClient(
-        "mongodb+srv://yash_kumar:yashjain@cluster0.oaexh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+        "mongodb+srv://yash_kumar:<password>@cluster0.oaexh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     db = client.test
     col = db['countries']
     col.updateMany({}, {'$set': {"population": 'null'}})
