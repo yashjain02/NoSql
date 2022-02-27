@@ -13,4 +13,3 @@ if __name__ == '__main__':
     print_hi('PyCharm')
     wordGiven = str(input("Enter the letter or word to be searched"))
     connectdb(wordGiven)
-
