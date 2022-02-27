@@ -6,7 +6,7 @@ def connectdb():
     db = client.test
     col = db['countries']
     cursor=col.find({'name': {'$regex': 'u','$options':'i'}, 'population':{'$gt':100000}},{'name':1, '_id':0, 'population':1})
-    for i in cursor:
-        print(i)
+    for CountryName in cursor:
+        print(CountryName)
 if __name__ == '__main__':
     connectdb()
